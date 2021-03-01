@@ -5,7 +5,7 @@ The Urban Tree Cover Inequality Atlas (version 2016.9) is a Google Earth Engine 
 # Installation and Usage
 To use this code, you must have a Google Earth Engine account. You can create an account at: https://code.earthengine.google.com/ 
 
-Copy the *US_Urban_Canopy_Viewer* code into the Google Earth Engine code editor and run the script. 
+[Click here to run the code on Earth Engine.](https://code.earthengine.google.com/?scriptPath=users%2FShree1175%2Ftnc_treeinequality%3AUSUrbanCanopyViewer_FINAL) 
 
 # Credits
 Tanushree Biswas, Charlotte Stanley and Rob McDonald (2020). The Nature Conservancy. Please contact tanushree.biswas@tnc.org if you have any questions.

@@ -7,15 +7,14 @@ To use this code, you must have a Google Earth Engine account. You can create an
 
 [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/?scriptPath=users%2FShree1175%2Ftnc_treeinequality%3AUSUrbanCanopyViewer_FINAL) 
 
+You can also download the code as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
+
 # Data
-The Github page above includes CSV files with data for each U.S. urban area mapped ("censusBlock_urban_treeCanopy_CityName.csv"). Download your city of interest to view tree canopy data. The file "DataDescription.csv" describes the fields in the tree canopy CSV files.
+This Github repository includes CSV files with tree canopy data for each U.S. urban area mapped ("censusBlock_urban_treeCanopy_CityName.csv"). Download your city of interest to view the data. The file "DataDescription.csv" describes the fields in the tree canopy CSV files.
 
-census block level, join to census block data using the field "census_block_GEOID"
-[Block GEOID](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html)
+To view the tree canopy data spatially, you will need to download spatial data for census blocks from the U.S. Census Bureau [here](https://www.census.gov/geographies/mapping-files.2020.html). Then, join the tree canopy CSV file to the respective city's census block level data on the field "census_block_GEOID". [This website](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) provides a description of the Block GEOIDs. 
 
-Download spatial data from the US Census here(https://www.census.gov/geographies/mapping-files.2020.html)
-
-You can download a geodatabase with tree canopy data for all 100 studied U.S. urban areas [here]. (https://knb.ecoinformatics.org/view/doi:10.5063/MS3R5F)
+You can also download a geodatabase with tree canopy data for all 100 studied U.S. urban areas [here]. (https://knb.ecoinformatics.org/view/doi:10.5063/MS3R5F)
 
 # Credits
 Tanushree Biswas, Charlotte Stanley and Rob McDonald (2020). The Nature Conservancy. Please contact tanushree.biswas@tnc.org if you have any questions.

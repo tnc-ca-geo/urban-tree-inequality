@@ -10,7 +10,7 @@ To use this code, you must have a Google Earth Engine account. You can create an
 You can also download the code as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
 
 # Data
-This Github repository includes CSV files with tree canopy data for each U.S. urban area mapped ("censusBlock_urban_treeCanopy_CityName.csv"). Download your city of interest to view the data. The file "DataDescription.csv" describes the fields in the tree canopy CSV files.
+The "censusBlock_data" folder contains CSV files with tree canopy data for each U.S. urban area mapped ("censusBlock_urban_treeCanopy_CityName.csv"). Download your city of interest to view the data. The file "DataDescription.csv" describes the fields in the tree canopy CSV files.
 
 To view the tree canopy data spatially, you will need to download spatial data for census blocks from the U.S. Census Bureau [here](https://www.census.gov/geographies/mapping-files.2020.html). Then, join the tree canopy CSV file to the respective city's census block level data on the field "census_block_GEOID". [This website](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) provides a description of the Block GEOIDs. 
 

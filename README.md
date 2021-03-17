@@ -5,7 +5,8 @@ The Urban Tree Cover Inequality Atlas (version 2016.9) is a Google Earth Engine 
 # Installation and Usage
 To use this code, you must have a Google Earth Engine account. You can create an account at: https://code.earthengine.google.com/ 
 
-(link to Repository)
+_TNC_TreeInequality GEE Repository:_
+https://code.earthengine.google.com/?accept_repo=users/Shree1175/tnc_treeinequality
 
 U.S. Urban Tree Cover Inequality Atlas 2016: [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/?scriptPath=users%2FShree1175%2Ftnc_treeinequality%3AUSUrbanCanopyViewer_FINAL) 
 
@@ -20,7 +21,7 @@ The "censusBlock_data" folder contains CSV files with tree canopy data for each 
 
 To view the tree canopy data spatially, you will need to download spatial data for census blocks from the U.S. Census Bureau [here](https://www.census.gov/geographies/mapping-files.2020.html). Then, join the tree canopy CSV file to the respective city's census block level data on the field "census_block_GEOID". [This website](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) provides a description of the Block GEOIDs. 
 
-You can also download a geodatabase with tree canopy data for all 100 studied U.S. urban areas [here] (https://knb.ecoinformatics.org/view/doi:10.5063/MS3R5F).
+You can also download a geodatabase with tree canopy data for all 100 studied U.S. urban areas [here.](https://knb.ecoinformatics.org/view/doi:10.5063/MS3R5F)
 
 # Credits
 Tanushree Biswas, Charlotte Stanley and Rob McDonald (2020). The Nature Conservancy. Please contact tanushree.biswas@tnc.org if you have any questions.

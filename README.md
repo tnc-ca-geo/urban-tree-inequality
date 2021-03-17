@@ -14,7 +14,7 @@ The "censusBlock_data" folder contains CSV files with tree canopy data for each 
 
 To view the tree canopy data spatially, you will need to download spatial data for census blocks from the U.S. Census Bureau [here](https://www.census.gov/geographies/mapping-files.2020.html). Then, join the tree canopy CSV file to the respective city's census block level data on the field "census_block_GEOID". [This website](https://www.census.gov/programs-surveys/geography/guidance/geo-identifiers.html) provides a description of the Block GEOIDs. 
 
-You can also download a geodatabase with tree canopy data for all 100 studied U.S. urban areas [here]. (https://knb.ecoinformatics.org/view/doi:10.5063/MS3R5F)
+You can also download a geodatabase with tree canopy data for all 100 studied U.S. urban areas [here] (https://knb.ecoinformatics.org/view/doi:10.5063/MS3R5F).
 
 # Credits
 Tanushree Biswas, Charlotte Stanley and Rob McDonald (2020). The Nature Conservancy. Please contact tanushree.biswas@tnc.org if you have any questions.

@@ -5,15 +5,11 @@ The Urban Tree Cover Inequality Atlas (version 2016.9) is a Google Earth Engine 
 # Installation and Usage
 To use this code, you must have a Google Earth Engine account. You can create an account at: https://code.earthengine.google.com/ 
 
-[TNC_TreeInequality GEE Repository](https://code.earthengine.google.com/?accept_repo=users/Shree1175/tnc_treeinequality)
-
-"Assessment of Urban Tree Cover Inequity across US : "
-
-"Step 1 : Map Urban Tree Cover using NAIP 2016" [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/8133aae126123850ca672a561e64f086?accept_repo=TNC_CA)
-
-"Step 2 : Assessment of Land Surface Temperature across US Urban Areas using Landsat" [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0f86a97b11bb4cc891ef784abf92a6ba?accept_repo=TNC_CA)
-
-"Step 3 : View Classified Urban Tree Cover " [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0c38d1fe4e26a561363f9eaabd33cbd0?accept_repo=TNC_CA)
+**Google Earth Engine (GEE) Repository**
+All of the scripts related to this project, Assessment of Urban Tree Cover Inequity across the U.S., are within the [TNC_TreeInequality GEE Repository](https://code.earthengine.google.com/?accept_repo=users/Shree1175/tnc_treeinequality). The repository contains four scripts: 
+- "Step 1 : Map Urban Tree Cover using NAIP 2016" [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/8133aae126123850ca672a561e64f086?accept_repo=TNC_CA)
+- "Step 2 : Assessment of Land Surface Temperature across US Urban Areas using Landsat" [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0f86a97b11bb4cc891ef784abf92a6ba?accept_repo=TNC_CA)
+- "Step 3 : View Classified Urban Tree Cover " [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0c38d1fe4e26a561363f9eaabd33cbd0?accept_repo=TNC_CA)
 
 You can also download the code as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
 

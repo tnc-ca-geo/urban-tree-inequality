@@ -13,6 +13,8 @@ To use this code, you must have a Google Earth Engine account. You can create an
 
 "Step 2 : Assessment of Land Surface Temperature across US Urban Areas using Landsat" [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0f86a97b11bb4cc891ef784abf92a6ba?accept_repo=TNC_CA)
 
+"Step 3 : View Classified Urban Tree Cover " [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0c38d1fe4e26a561363f9eaabd33cbd0?accept_repo=TNC_CA)
+
 You can also download the code as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
 
 # Data

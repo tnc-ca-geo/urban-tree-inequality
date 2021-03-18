@@ -7,9 +7,9 @@ To use this code, you must have a Google Earth Engine account. You can create an
 
 [TNC_TreeInequality GEE Repository](https://code.earthengine.google.com/?accept_repo=users/Shree1175/tnc_treeinequality)
 
-[Assessment of Urban Tree Cover Inequity across US :]
+"Assessment of Urban Tree Cover Inequity across US : "
 
-"Step 1 : Map Urban Tree Cover using NAIP 2016" - description - [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/8133aae126123850ca672a561e64f086?accept_repo=TNC_CA)
+"Step 1 : Map Urban Tree Cover using NAIP 2016" [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/8133aae126123850ca672a561e64f086?accept_repo=TNC_CA)
 
 "Step 2 : Assessment of Land Surface Temperature across US Urban Areas using Landsat" [Click here to run the code on Earth Engine.] (https://code.earthengine.google.com/0f86a97b11bb4cc891ef784abf92a6ba?accept_repo=TNC_CA)
 

@@ -1,6 +1,6 @@
 # US Urban Tree Cover Inequality Atlas 2016
 
-The Urban Tree Cover Inequality Atlas (version 2016.9) is a Google Earth Engine web tool that maps tree canopy across 100 urban areas in the U.S. and displays the relationship between tree canopy and income inequality. The data was developed from high-resolution aerial imagery, summer temperatures, and census demographics. The tool allows users to explore information on tree canopy cover, summer temperatures, income, population density, and "tree gap" (the difference in tree canopy between low-income and high-income census blocks) in each urban area. The web tool is available at: https://tinyurl.com/tree-inequality. A manuscript with a full description of the methods used is in review and all datasets will soon be made publicly available.
+The Urban Tree Cover Inequality Atlas (version 2016.9) is a Google Earth Engine web tool that maps tree canopy across 100 urbanized areas in the U.S. and displays the relationship between tree canopy and income inequality. The data was developed from high-resolution aerial imagery, satellite remotely sensed land summer temperatures, and census demographics. The tool allows users to explore the information on tree canopy cover, summer temperatures, income, population density, and "tree gap" (the difference in tree canopy between low-income and high-income census blocks) in each urban area. The web tool is available at: https://tinyurl.com/tree-inequality. A manuscript with a full description of the methods used is in review and all datasets will soon be made publicly available.
 
 # Installation and Usage
 To use this code, you must have a Google Earth Engine account. You can create an account at: https://code.earthengine.google.com/ 
@@ -9,9 +9,10 @@ To use this code, you must have a Google Earth Engine account. You can create an
 
 U.S. Urban Tree Cover Inequality Atlas 2016: [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/?scriptPath=users%2FShree1175%2Ftnc_treeinequality%3AUSUrbanCanopyViewer_FINAL) 
 
-"SCRIPT NAME" - description - link 
+"Assessment of Urban Tree Cover Inequity across US"
+"Step 1 : Map Urban Tree Cover using NAIP 2016" - description - [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/8133aae126123850ca672a561e64f086?accept_repo=TNC_CA)
 
-
+"Step 2 : Assessment of Land Surface Temperature across US Urban Areas using Landsat" [Click here to run the code on Earth Engine.] (https://code.earthengine.google.com/0f86a97b11bb4cc891ef784abf92a6ba?accept_repo=TNC_CA)
 
 You can also download the code as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
 

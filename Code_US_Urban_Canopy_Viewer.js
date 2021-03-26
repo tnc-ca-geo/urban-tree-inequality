@@ -1,12 +1,7 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var table = ee.FeatureCollection("users/Shree1175/CODA_assets/CODA_Block_summary_onlyFC"),
-    table2 = ee.FeatureCollection("users/Shree1175/CODA_assets/CODA_MSA_with_FC_per_summary"),
-    canopy = ee.ImageCollection("users/Shree1175/CODA_Canopy/FinalCollection"),
-    treeViz = {"opacity":1,"bands":["classification"],"palette":["3daf3e"]},
-    l8 = ee.ImageCollection("projects/igde-work/CODA_UrbanCanopy/CODA-MSA-Temperatures"),
+var treeViz = {"opacity":1,"bands":["classification"],"palette":["3daf3e"]},
     tempViz = {"opacity":1,"bands":["temp"],"min":293.0870062255859,"max":309.78039489746095,"palette":["104aff","7a8eff","ffece7","ff9685","e2470c"]},
     table_new = ee.FeatureCollection("users/Shree1175/CODA_assets/Block_summary_all_fc"),
-    block_c = ee.ImageCollection("users/Shree1175/CODA_Canopy/BlockCollection"),
     geometry = 
     /* color: #d63000 */
     /* shown: false */
@@ -27,21 +22,50 @@ var table = ee.FeatureCollection("users/Shree1175/CODA_assets/CODA_Block_summary
     us_summ = ee.FeatureCollection("users/Shree1175/UrbanForest/US_TreeInEquity_MSA_Mean_FC_Temp"),
     TIGER_cities = ee.FeatureCollection("users/charlotteks/tl_2017_us_uac10"),
     Table_S6_Clean = ee.FeatureCollection("users/charlotteks/UrbanAtlas_TABLE_S6"),
-    Table_s4 = ee.FeatureCollection("users/Shree1175/UrbanForest/Table_s4");
+    Table_s4 = ee.FeatureCollection("users/Shree1175/UrbanForest/Table_s4"),
+    raster_temp = ee.ImageCollection("users/Shree1175/UrbanForest/TempCollection"),
+    bloc_temp_new = ee.ImageCollection("users/Shree1175/UrbanForest/Block_Temp"),
+    table2 = ee.FeatureCollection("users/Shree1175/CODA_assets/CODA_MSA_with_FC_per_summary");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// U.S. Urban Tree Cover Inequality Atlas 2016
-// 
-// This app shows the disparity in urban tree cover in 100 urban areas, and presents the difference between urban tree cover,
-// summer surface temperature, and income inequality in each city. 
-//
-// Created by Tanushree Biswas, Charlotte Stanley and Rob McDonald (The Nature Conservancy, 2020). 
+// -------------------------------------------------------------
+// Assessment of Urban Tree Cover Inequity across US 
+// The Nature Conservancy, 2021
+// Step 4 : Final U.S. Urban Tree Cover Inequality Atlas 2016
+// -------------------------------------------------------------
+// This app provides a synoptic view of the disparity in urban tree cover across 5723 US cities, and 
+// presents the difference between urban tree cover, summer surface temperature, and income 
+// inequality in each city at census block level. Urban tree cover was mapped at 2m resolution 
+// using NAIP 2016 by ten mapping zones following a Random Forest approach to get an estimate 
+// to tree cover at census block and explore spatial patterns of tree cover inequity across income and 
+// population group. Refer to McDonal et al., (2021) for more information on methods. 
+// -----------------------------------------------------------------
+// Developed by Tanushree Biswas, Charlotte Stanley and Rob McDonald (The Nature Conservancy, 2021). 
 // Please contact tanushree.biswas@tnc.org if you have any questions.
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ------------------------------------------------------------------
+// Citation : McDonald R.I, Biswas T, Sachar C, Housman I, Boucher T.M., Balk D, Nowak D, Spotswood E,Stanley C.K., 
+// and Leyk S., (2021). PLOSone. The urban tree cover and temperature disparity in US urbanized areas: 
+// Quantifying the effect of income across 5,723 communities
+// --------------------------------------------------------------------
+//  ABSTRACT : Urban tree cover provides benefits to human health and well-being, but previous studies suggest that
+// tree cover is often inequitably distributed. Here, we use survey the tree cover inequality for US Census
+// blocks in U.S. large urbanized areas, home to 167 million people across 5,723 municipalities 
+// and other places. In 92% of the urbanized areas surveyed, low-income blocks have less tree cover than 
+// high-income blocks. On average low-income blocks have 15.2% less tree cover and are 1.5⁰C hotter 
+// (surface temperature) than high-income blocks. The greatest difference between low- and high-income 
+// blocks was found in urbanized areas in the Northeast of the United States, where low-income blocks 
+// often have at least 30% less tree cover and are at least 4.0⁰C hotter. Even after controlling for
+// population density and built-up intensity, the association between income and tree cover is 
+// significant, as is the association between race and tree cover. We estimate, after controlling 
+// for population density, that low-income blocks have 62 million fewer trees than high-income blocks, 
+// a compensatory value of $56 billion dollars ($1,349/person). An investment in tree planting and 
+// natural regeneration of $17.6 billion would close the tree cover disparity for 42 million people 
+// in low-income blocks.
+//===============================================================================================
 
-////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Create a split panel to display two maps side-by-side 
-////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // clear the initial map
 ui.root.clear();
@@ -109,11 +133,12 @@ var temp = ee.FeatureCollection(bloc_temp).filterBounds(sa);
 // Convert data layers to images
 ////////////////////////////////////////
 
-var treeRed = tree.reduceToImage(["fc_in_BG_g"],ee.Reducer.max());
+//var treeRed = tree.reduceToImage(["fc_in_BG_g"],ee.Reducer.max());
 var treeRed_all = tc_all.reduceToImage(["fc_in_BG_g"],ee.Reducer.max()).rename('Tree canopy'); 
 var treeGap_US = treeGap.reduceToImage(["TreeTarget"],ee.Reducer.max()).rename('Tree target');  
 var income = treeGap.reduceToImage(["IncomeGrp"],ee.Reducer.max());
-var Surf_temp = temp.reduceToImage(["SurfaceTem"],ee.Reducer.max()).rename('Temperature'); 
+//var Surf_temp = temp.reduceToImage(["SurfaceTem"],ee.Reducer.max()).rename('Temperature'); 
+var Surf_temp = (bloc_temp_new.mosaic()).clip(sa).rename('Temperature');
 var popGrp= treeGap.reduceToImage(["PopDensGrp"],ee.Reducer.max());
 var incomeUSD = treeGap.reduceToImage(["IncPr"],ee.Reducer.max()).rename('Income_USD');  
 
@@ -124,7 +149,7 @@ var incomeUSD = treeGap.reduceToImage(["IncPr"],ee.Reducer.max()).rename('Income
 var redPalette = {min:0, max : 1, palette:["e4e9b9","81bd6e","238433","004529"]};
 var bluePalette = {min:0, max : 1, palette:["084081","41B6C4","FFFFE5","D9F0A3","78C679","238443","004529"]};
 var yellowPalette = {min:1, max: 4, palette: ["f7fb0c","b2b444","87842d","60562f"]};
-var vis_temp = {max: 34.3, min: 29.2, opacity: 1, palette: ["4425e9","ffffe5","d83611"]};
+var vis_temp = {min: 29.2, max: 34.3, opacity: 1, palette: ["4425e9","ffffe5","d83611"]};
 var vis_gap = {max: 0.23, min: 0.21, opacity: 0.79, palette:["c47512","fff6f1","86c16f"]}; 
 var popPalette = {min:1, max: 4, opacity: 0.71, palette: ["e1e68f","acaf9b","636c4f","3e3952"]}; 
 
@@ -310,7 +335,7 @@ panel.add(Logo);
 // write description text
 var description = ui.Panel([
   ui.Label({
-  value: 'The Urban Tree Cover Inequality Atlas (version 2016.9) maps urban tree canopy across 100 urban areas in the U.S. and displays how tree cover relates to income inequality. The data was developed from high-resolution aerial imagery, summer temperatures, and census demographics. In 92% of urban areas surveyed, low-income census blocks on average have 15.2% lower canopy cover and are 1.5 degrees C hotter than high-income blocks (McDonald et al., in review). A manuscript with a full description of the methods used to make these layers is in review and all datasets will soon be made publicly available.',
+  value: 'The Urban Tree Cover Inequality Atlas (version 2016.9) maps urban tree canopy across 100 urban areas in the U.S. and displays how tree cover relates to income inequality. The data was developed from high-resolution aerial imagery, summer temperatures, and census demographics. In 92% of urban areas surveyed, low-income census blocks on average have 15.2% lower canopy cover and are 1.5 degrees C hotter than high-income blocks (McDonald et al., accepted PLOSone Feb 2021). A manuscript with a full description of the methods used to make these layers and all datasets will soon be made publicly available.',
   style: {fontSize: '16px' }
   }),
   ui.Label({

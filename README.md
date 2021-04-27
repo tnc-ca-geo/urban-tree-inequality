@@ -5,8 +5,8 @@
 The Urban Tree Cover Inequality Atlas (version 2016.9) is a Google Earth Engine web tool that maps tree canopy across 100 urbanized areas in the U.S. and displays the relationship between tree canopy and income inequality. The data was developed from high-resolution aerial imagery, satellite remotely sensed land summer temperatures, and census demographics. The tool allows users to explore the information on tree canopy cover, summer temperatures, income, population density, and "tree gap" (the difference in tree canopy between low-income and high-income census blocks) in each urban area. The web tool is available at: https://tinyurl.com/tree-inequality. A manuscript with a full description of the methods used is in review and all datasets will soon be made publicly available.
 
 **Primary Points of Contact:**
-- Rob McDonald, rob_mcdonald@tnc.org
-- Tanushree Biswas, tanushree.biswas@tnc.org
+- Dr. Rob McDonald, rob_mcdonald@tnc.org
+- Dr. Tanushree Biswas, tanushree.biswas@tnc.org
 
 ## Installation and Usage
 To use this code, you must have a Google Earth Engine account. You can create an account at: https://code.earthengine.google.com/ 
@@ -19,7 +19,7 @@ The repository contains three scripts:
 
 - _Step 1: View Classified Urban Tree Canopy:_ View the classified urban tree canopy across 5,723 US cities, overlaid with NAIP 2016 imagery. [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0c38d1fe4e26a561363f9eaabd33cbd0?accept_repo=TNC_CA)
 - _Step 2: Assessing Land Surface Temperature US Cities:_ This script provides an automated way to summarize land surface temperature using Landsat. [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/0f86a97b11bb4cc891ef784abf92a6ba?accept_repo=TNC_CA)
-- _**Step 3: US Urban Tree Inequality Viewer:**_ This app provides a view of the disparity in urban tree cover across 5,723 US cities, and presents the difference between urban tree cover, summer surface temperature, and income inequality in each city. [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/?scriptPath=users%2FShree1175%2Ftnc_treeinequality%3AStep4_US_UrbanTreeInequality_Viewer) You can also download the code for the web app as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
+- _Step 3: US Urban Tree Inequality Viewer:_ This app provides a view of the disparity in urban tree cover across 5,723 US cities, and presents the difference between urban tree cover, summer surface temperature, and income inequality in each city. [Click here to run the code on Earth Engine.](https://code.earthengine.google.com/?scriptPath=users%2FShree1175%2Ftnc_treeinequality%3AStep4_US_UrbanTreeInequality_Viewer) You can also download the code for the web app as a text file ("Code_US_Urban_Canopy_Viewer.js"). 
 
 ## Data
 The "censusBlock_data" folder contains CSV files with tree canopy data for each U.S. urban area mapped ("censusBlock_urban_treeCanopy_CityName.csv"). Download your city of interest to view the data. The file "DataDescription.csv" describes the fields in the tree canopy CSV files.

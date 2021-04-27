@@ -28,15 +28,15 @@ var treeViz = {"opacity":1,"bands":["classification"],"palette":["3daf3e"]},
     table2 = ee.FeatureCollection("users/Shree1175/CODA_assets/CODA_MSA_with_FC_per_summary");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // -------------------------------------------------------------
-// Assessment of Urban Tree Cover Inequity across US 
+// Assessment of Urban Tree Cover Inequality across US 
 // The Nature Conservancy, 2021
-// Step 4 : Final U.S. Urban Tree Cover Inequality Atlas 2016
+// Step 3 : Final U.S. Urban Tree Cover Inequality Atlas 2016
 // -------------------------------------------------------------
 // This app provides a synoptic view of the disparity in urban tree cover across 5723 US cities, and 
 // presents the difference between urban tree cover, summer surface temperature, and income 
 // inequality in each city at census block level. Urban tree cover was mapped at 2m resolution 
 // using NAIP 2016 by ten mapping zones following a Random Forest approach to get an estimate 
-// to tree cover at census block and explore spatial patterns of tree cover inequity across income and 
+// to tree cover at census block and explore spatial patterns of tree cover inequality across income and 
 // population group. Refer to McDonal et al., (2021) for more information on methods. 
 // -----------------------------------------------------------------
 // Developed by Tanushree Biswas, Charlotte Stanley and Rob McDonald (The Nature Conservancy, 2021). 
@@ -305,7 +305,7 @@ panel.style().set('width', '500px');
 // create title text 
 var intro = ui.Panel([
   ui.Label({
-    value: 'US Urban Tree Cover Inequality Atlas 2016',
+    value: 'US Urban Tree Cover Inequality Atlas 2021',
     style: {fontSize: '24px', fontWeight: 'bold'}
   })
 ]);
@@ -332,16 +332,24 @@ var Logo = ui.Panel(thumb, 'flow', {width: '300px'});
 // add logo to panel
 panel.add(Logo);
 
+// add hyperlink to tree canopy viewer
+var label_url = ui.Label({
+    value:'Click here to view the classified urban tree cover.',
+    style: {fontSize: '14px', fontWeight: 'bold'}
+  });
+label_url.setUrl('https://shree1175.users.earthengine.app/view/usurbantreecover2016');
+
 // write description text
 var description = ui.Panel([
   ui.Label({
-  value: 'The Urban Tree Cover Inequality Atlas (version 2016.9) maps urban tree canopy across 100 urban areas in the U.S. and displays how tree cover relates to income inequality. The data was developed from high-resolution aerial imagery, summer temperatures, and census demographics. In 92% of urban areas surveyed, low-income census blocks on average have 15.2% lower canopy cover and are 1.5 degrees C hotter than high-income blocks (McDonald et al., accepted PLOSone Feb 2021). A manuscript with a full description of the methods used to make these layers and all datasets will soon be made publicly available.',
+  value: 'The Urban Tree Cover Inequality Atlas (version 2016.9) maps urban tree canopy across 5,723 US cities and displays how tree cover relates to income inequality. The data was developed from high-resolution aerial imagery, summer temperatures, and census demographics. In 92% of urban areas surveyed, low-income census blocks on average have 15.2% lower canopy cover and are 1.5 degrees C hotter than high-income blocks (McDonald et al., accepted PLOSone Feb 2021). A manuscript with a full description of the methods used to make these layers and all datasets will soon be made publicly available.',
   style: {fontSize: '16px' }
   }),
   ui.Label({
   value: 'How To Use the App: Click on a city on the map to get a more detailed picture of the urban tree cover in your area of interest. When you click inside a block, three charts will appear at the bottom of this panel displaying more information on the relationship between tree cover, income, population, and temperature.',
   style: {fontSize: '14px' }
   }),
+  label_url,
   ui.Label({
   value: 'Layers: “Mean Tree Cover” is the percent tree cover within a census block. “Temperature” shows the mean summer temperature. “Income” shows the income quartile that block belongs to within the city. “Population” shows the population density quartile that block belongs to within the city. “Tree Gap” shows the gap in tree cover between low-income and high-income census blocks.',
   style: {fontSize: '14px' }
@@ -350,6 +358,11 @@ var description = ui.Panel([
     value:'Tanushree Biswas, Charlotte Stanley and Rob McDonald (2020). The Nature Conservancy. Please contact tanushree.biswas@tnc.org if you have any questions.',
     style: {fontSize: '11px' }
   }),
+  ui.Label({
+    value:'Citation : McDonald R.I, Biswas T, Sachar C, Housman I, Boucher T.M., Balk D, Nowak D, Spotswood E, Stanley C.K., and Leyk S., The urban tree cover and temperature disparity in US urbanized areas: Quantifying the effect of income across 5,723 communities (PLOSone April 2021).',
+    style:{fontSize: '11px'}
+  })
+  
 ]);
 
 // add description to panel
@@ -1444,7 +1457,7 @@ leftMap.onClick(function(coords) {
 ////////////////////////////////////////
 
 // Create label with instruction text 
-var label1 = ui.Label('Click inside a city boundary on the map to see the inequity in tree canopy  by income');
+var label1 = ui.Label('Click inside a city boundary on the map to see the inequality in tree canopy  by income');
 label1.style().set('fontWeight', 'bold');
 label1.style().set({
   fontSize: '16px',
@@ -1453,7 +1466,7 @@ var treeCoverPanel = ui.Panel([label1]);
   treeCoverPanel.style().set({ fontSize: '100px', position: 'top-center'});
 
 // Create label with instruction text (duplicate for right map)
-var label2 = ui.Label('Click inside a city boundary on the map to see the inequity in tree canopy  by income');
+var label2 = ui.Label('Click inside a city boundary on the map to see the inequality in tree canopy  by income');
 label2.style().set('fontWeight', 'bold');
 label2.style().set({
   fontSize: '16px',

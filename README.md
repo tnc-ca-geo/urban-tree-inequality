@@ -13,7 +13,7 @@ To use this code, you must have a Google Earth Engine account. You can create an
 
 **Google Earth Engine (GEE) Repository**
 
-All of the scripts related to this project, Assessment of Urban Tree Cover Inequality across the US, are within the [TNC_TreeInequality GEE Repository](https://earthengine.googlesource.com/users/Shree1175/tnc_treeinequality). 
+All of the scripts related to this project, Assessment of Urban Tree Cover Inequality across the US, are within the [TNC_TreeInequality GEE Repository](https://code.earthengine.google.com/?accept_repo=users/Shree1175/tnc_treeinequality). 
 
 The repository contains three scripts: 
 

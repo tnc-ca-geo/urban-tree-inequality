@@ -1,9 +1,0 @@
-﻿Field Name,Name,Description
-Name,City Name,Name of metropolitan area
-census_block_GEOID,Census Block,Census block number
-fc_in_BG_g,Tree Canopy,Mean percent tree cover per census block
-TreeTarget,Tree Gap,The gap in tree cover between low-income and high-income census blocks
-SurfaceTem,Temperature,Mean summer surface temperature (in Celsius)
-IncPr,Income,Mean household income (in USD) per census block
-IncomeGrp,Income Group,"Household income (in U.S. dollars) divided into four quartiles per city, represented by values 1-4, corresponding to: (1) Very low (less than $25,000), (2) Low (between $25,000 to $35,000), (3) Medium (between $35,000 to $55,000), (4) High (greater than $55,000)"
-PopDensGrp,Population Density Group,"Population density (people per square kilometer) divided into four quartiles per city, represented by values 1-4, corresponding to: (1) Very Low (less than 2,000), (2) Low (between 2,000 and 4,000), (3) Medium (between 4,000 and 8,000), (4) High (greater than 8,000)"
